@@ -4,6 +4,9 @@
 # Compiled project
 out/
 
+# Idea config
+.idea/
+
 # Log file
 *.log
 
