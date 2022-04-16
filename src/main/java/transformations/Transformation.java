@@ -1,4 +1,4 @@
-package main.java.transformation;
+package main.java.transformations;
 
 import java.awt.image.BufferedImage;
 import java.util.function.Consumer;

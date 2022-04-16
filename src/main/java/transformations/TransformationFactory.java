@@ -1,4 +1,4 @@
-package main.java.transformation;
+package main.java.transformations;
 
 import main.java.argparser.Argument;
 import main.java.wrappers.Size;
