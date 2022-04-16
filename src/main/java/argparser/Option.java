@@ -6,6 +6,7 @@ import java.lang.module.FindException;
  * Option is a part of argument that holds its name<br>
  * <p>
  * Example: --option=value
+ * TODO: Add type check
  *
  * @see Argument
  * @see Parser
@@ -14,6 +15,7 @@ public enum Option {
     BRIGHTNESS("brightness"),
     CROP("crop"),
     HELP("help"),
+    ROTATE("rotate"),
     OUTPUT("out"),
     INPUT("in");
 
