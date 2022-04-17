@@ -18,6 +18,10 @@ public record Argument(Option option, String value) {
         return value;
     }
 
+    public int intValue() {
+        return Integer.parseInt(value);
+    }
+
     @Override
     public String toString() {
         return String.format("%s = %s", getOption(), getValue());

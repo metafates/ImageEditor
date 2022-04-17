@@ -13,6 +13,7 @@ import java.lang.module.FindException;
  */
 public enum Option {
     BRIGHTNESS("brightness"),
+    HUE("hue"),
     CROP("crop"),
     HELP("help"),
     ROTATE("rotate"),
