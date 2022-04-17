@@ -42,7 +42,7 @@ public enum Option {
             }
         }
 
-        throw new IllegalArgumentException(String.format("Unknown argument '%s'", text));
+        throw new IllegalArgumentException(String.format("Unknown option '%s'", text));
     }
 
     public boolean requiresValue() {
