@@ -1,6 +1,7 @@
 # Image Editor
 
 - [About](#about)
+- [Note](#note)
 - [Functionality](#functionality)
 - [Build](#build)
 
@@ -8,6 +9,10 @@
 
 This is an image editor with various image editing functionality that allows you to crop, zoom, transform, adjust
 brightness and apply more such transformations over an image.
+
+## Note
+
+❗ No external modules are used except for [Junit](https://junit.org/junit5/) testing framework
 
 ## Functionality
 
@@ -18,7 +23,7 @@ brightness and apply more such transformations over an image.
 - [x] Adjust brightness and contrast
 - [ ] Gamma correction
 - [ ] Crop and rotate
-- [ ] HUE Rotate
+- [x] HUE Rotate
 
 ## Build
 
