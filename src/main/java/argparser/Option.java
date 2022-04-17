@@ -12,18 +12,20 @@ import java.lang.module.FindException;
  * @see Parser
  */
 public enum Option {
-    BRIGHTNESS("brightness"),
-    HUE("hue"),
-    CROP("crop"),
-    HELP("help"),
-    ROTATE("rotate"),
-    OUTPUT("out"),
-    INPUT("in");
+    BRIGHTNESS("--brightness", true),
+    HUE("--hue", true),
+    CROP("--crop", true),
+    HELP("--help", false),
+    ROTATE("--rotate", true),
+    OUTPUT("--out", true),
+    INPUT("--in", true);
 
     private final String argumentString;
+    private final boolean requiresValue;
 
-    Option(final String text) {
+    Option(final String text, final boolean requiresValue) {
         this.argumentString = text;
+        this.requiresValue = requiresValue;
     }
 
     /**
@@ -41,5 +43,9 @@ public enum Option {
         }
 
         throw new IllegalArgumentException(String.format("Unknown argument '%s'", text));
+    }
+
+    public boolean requiresValue() {
+        return requiresValue;
     }
 }

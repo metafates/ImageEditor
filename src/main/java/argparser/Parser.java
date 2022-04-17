@@ -6,11 +6,15 @@ import java.util.List;
 
 /**
  * Argument parser class
+ * TODO: Add support for whitespaces
  *
  * @see Argument
  * @see Option
  */
 public class Parser {
+    private static final String optionRegex = "--[A-Za-z]+";
+    private static final String valueRegex = "[A-Za-z0-9./\\\\]+";
+
     /**
      * Parses string into arguments list
      *
@@ -33,20 +37,30 @@ public class Parser {
             String argumentString = argumentsString[i];
 
             try {
-                // Except argument to be in a format like "--option=value"
-                if (!argumentString.matches("--\\w+=\\w+")) {
-                    throw new IllegalArgumentException(String.format("Argument '%s' does not match argument format", argumentString));
-                }
-
                 String[] tokens = argumentString.split("=");
-
-                // Remove leading '--'
-                String optionString = tokens[0].substring(2);
-                String valueString = tokens[1];
-
+                String optionString = tokens[0];
                 Option option = Option.fromString(optionString);
 
-                arguments.add(new Argument(option, valueString));
+                if (!option.requiresValue()) {
+                    // Expect argument to be in a format like "--option"
+                    if (!argumentString.matches(String.format("^%s$", optionRegex))) {
+                        String message = "Option '%s' does not accept value but it was given";
+                        throw new IllegalArgumentException(String.format(message, option));
+                    }
+
+                    arguments.add(new Argument(option, null));
+                } else {
+                    // Expect argument to be in a format like "--option=value"
+                    if (!argumentString.matches(String.format("^%s=%s$", optionRegex, valueRegex))) {
+                        String message = "Argument '%s' does not match argument format";
+                        throw new IllegalArgumentException(String.format(message, argumentString));
+                    }
+
+                    String valueString = tokens[1];
+
+                    arguments.add(new Argument(option, valueString));
+                }
+
             } catch (IllegalArgumentException e) {
                 throw new ParseException(e.getMessage(), i);
             }
@@ -55,4 +69,5 @@ public class Parser {
 
         return arguments;
     }
+
 }

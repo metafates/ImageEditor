@@ -24,6 +24,9 @@ public record Argument(Option option, String value) {
 
     @Override
     public String toString() {
-        return String.format("%s = %s", getOption(), getValue());
+        if (option.requiresValue())
+            return String.format("%s = %s", getOption(), getValue());
+
+        return getOption().toString();
     }
 }
