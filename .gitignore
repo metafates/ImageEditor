@@ -7,6 +7,9 @@ out/
 # Idea config
 .idea/
 
+# Lib
+lib/
+
 # Log file
 *.log
 

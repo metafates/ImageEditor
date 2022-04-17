@@ -24,7 +24,7 @@ public class Parser {
      */
     public static List<Argument> parse(final String toParse) throws ParseException {
         List<Argument> arguments = new ArrayList<>();
-        String[] argumentsString = toParse.split(" ");
+        String[] argumentsString = toParse.trim().split("\s+");
 
         // Show help message if no arguments given
         if (argumentsString.length == 0) {
