@@ -7,6 +7,10 @@ out/
 # Idea config
 .idea/
 
+# Macos files
+*/**/.DS_Store
+.DS_Store
+
 # Lib
 lib/
 
