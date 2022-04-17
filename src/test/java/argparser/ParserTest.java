@@ -12,24 +12,23 @@ import java.util.List;
 
 
 class ParserTest {
+    Parser parser = new Parser();
 
     @Test
     @DisplayName("Parse valid arguments")
     void parseValidArguments() throws ParseException {
 
-        int hueRotateDegree = 190;
+        String input = " --in=\"file with whitespace.ext\" --help   --crop=90  --hue=190";
 
-        String input = String.format("   --help   --crop=90  --hue=%d", hueRotateDegree);
+        Assertions.assertDoesNotThrow(() -> parser.parse(input));
 
-
-        Assertions.assertDoesNotThrow(() -> Parser.parse(input));
-
-        List<Argument> arguments = Parser.parse(input);
+        List<Argument> arguments = parser.parse(input);
 
         Assertions.assertAll(
-            () -> Assertions.assertFalse(arguments.get(0).getOption().requiresValue()),
-            () -> Assertions.assertEquals(Option.CROP, arguments.get(1).getOption()),
-            () -> Assertions.assertEquals(String.valueOf(hueRotateDegree), arguments.get(2).getValue())
+            () -> Assertions.assertEquals("file with whitespace.ext", arguments.get(0).getValue()),
+            () -> Assertions.assertFalse(arguments.get(1).getOption().requiresValue()),
+            () -> Assertions.assertEquals(Option.CROP, arguments.get(2).getOption()),
+            () -> Assertions.assertEquals("190", arguments.get(3).getValue())
         );
     }
 
@@ -39,11 +38,29 @@ class ParserTest {
         String[] inputsWithUnknownArguments = {
             "--unknown=value",
             "--help --arg --crop90",
-            "--crоp=90"
+            "--crоp=90" // 'о' symbol in 'crop' is a non-ascii symbol
         };
 
         for (String input : inputsWithUnknownArguments) {
-            Assertions.assertThrows(ParseException.class, () -> Parser.parse(input));
+            Assertions.assertThrows(ParseException.class, () -> parser.parse(input));
+        }
+    }
+
+    @Test
+    @DisplayName("Test escape symbols in values")
+    void testEscapeSymbolsInValues() throws ParseException {
+        String[] inputsWithEscapeSymbols = {
+            // Would look like
+            // --in="some long name with \"escaping\""
+            "--in=\"some long name with \\\"escaping\\\"\"",
+        };
+
+        for (String input : inputsWithEscapeSymbols) {
+            Assertions.assertDoesNotThrow(() -> parser.parse(input));
+
+            List<Argument> arguments = parser.parse(input);
+
+            Assertions.assertTrue(arguments.get(0).value().contains("\""));
         }
     }
 
@@ -61,12 +78,11 @@ class ParserTest {
             "--help=",
             "\uD83E\uDD16",
             "\n\n\n\n***2==2904",
-            "--hue=$$2",
             "==hue-20"
         };
 
         for (String input : malformedInputs) {
-            Assertions.assertThrows(ParseException.class, () -> Parser.parse(input));
+            Assertions.assertThrows(ParseException.class, () -> parser.parse(input));
         }
     }
 }
