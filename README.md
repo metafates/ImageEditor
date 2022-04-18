@@ -48,6 +48,13 @@ options:
 
 ## Build
 
+### Linux/MacOS/BSD
+
+Run `./build-jar-unix.sh` in the root of the project.
+This will put jar file to the `out/jar/ImageEditor.jar`
+
+#### Windows
+
 > 🚧 In progress...
 
 ## Examples
