@@ -6,7 +6,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Collection;
+import java.util.List;
 
 /**
  * Image editor that can apply given transformations.
@@ -44,7 +44,7 @@ public class ImageEditor {
         return this;
     }
 
-    public ImageEditor applyTransformations(Collection<Transformation> transformations) {
+    public ImageEditor applyTransformations(List<Transformation> transformations) {
         transformations.forEach(this::applyTransformation);
 
         return this;

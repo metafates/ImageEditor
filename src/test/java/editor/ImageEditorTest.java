@@ -16,8 +16,8 @@ import java.util.ArrayList;
 public class ImageEditorTest {
     private final ImageEditor editor = new ImageEditor();
 
-    private final String inputPath = new File("src/test/java/resources/burger.jpg").getAbsolutePath();
-    private final String outputPath = new File("src/test/java/resources/edited.jpg").getAbsolutePath();
+    private final String inputPath = new File("src/test/java/resources/image.jpeg").getAbsolutePath();
+    private final String outputPath = new File("src/test/java/resources/edited.jpeg").getAbsolutePath();
 
     @Test
     @Order(1)
