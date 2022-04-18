@@ -43,7 +43,7 @@ public enum Option {
     ),
     BLUR(
         "blur",
-        "Apply blur to them image",
+        "Apply Gaussian blur to the image",
         ValueType.INTEGER
     ),
     ROTATE(
