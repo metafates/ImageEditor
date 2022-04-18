@@ -3,7 +3,7 @@ package main.java.transformations;
 import java.awt.image.BufferedImage;
 
 /**
- * Applies hue rotate to the image
+ * Applies hue rotation to the image
  *
  * @see <a href="https://en.wikipedia.org/wiki/Hue">Hue</a>
  */
