@@ -4,8 +4,6 @@ import main.java.cli.CLI;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println();
-
         CLI cli = new CLI();
 
         try {
