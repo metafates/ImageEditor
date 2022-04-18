@@ -136,7 +136,7 @@ public class Parser {
      */
     private Option parseOption() throws ParseException {
         StringBuilder optionStringBuilder = new StringBuilder();
-        while (character != '=' && character != ' ') {
+        while (character != '=' && character != ' ' && character != '\0') {
             if (alphanumeric.contains(String.valueOf(character))) {
                 optionStringBuilder.append(character);
                 advance();

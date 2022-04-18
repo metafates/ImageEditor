@@ -7,6 +7,10 @@ out/
 # Idea config
 .idea/
 
+# Macos files
+*/**/.DS_Store
+.DS_Store
+
 # Lib
 lib/
 
@@ -30,3 +34,6 @@ lib/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Testing resources
+src/test/java/resources/images/*
