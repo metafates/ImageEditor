@@ -29,7 +29,7 @@ brightness and apply more such transformations over an image.
 ## Usage
 
 ```bash
-climage --in="image.jpg" --out="edited.jpeg" --scale=2 --blur=30 --hue=90
+java -jar ImageEditor.jar --in="image.jpg" --out="edited.jpeg" --scale=2 --blur=30 --hue=90
 ```
 
 ```bash
