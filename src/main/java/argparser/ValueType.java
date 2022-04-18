@@ -6,7 +6,7 @@ public enum ValueType {
         "^-?\\d+$"
     ),
     FLOAT(
-        "Decimal",
+        "Float",
         "^-?\\d+(\\.\\d*)?$"
     ),
     STRING(
