@@ -74,7 +74,7 @@ public class CLI {
 
     /**
      * Parses and applies given input string with arguments.
-     * Can be used as <code>cli.accept("--option=value").accept("--option2 --option3=value")</code>
+     * Can be used as <code>cli.prepare("--option=value").prepare("--option2 --option3=value")</code>
      *
      * @param inputString String with arguments
      * @return Class instance to support method chaining

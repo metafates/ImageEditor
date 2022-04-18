@@ -4,6 +4,9 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.function.Consumer;
 
+/**
+ * Saturation transformation
+ */
 public class Saturation extends Transformation {
     public Saturation(final float multiplier) {
         super((Consumer<BufferedImage>) image -> saturationTransformation(image, multiplier));
