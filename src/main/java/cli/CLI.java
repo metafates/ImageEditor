@@ -106,8 +106,7 @@ public class CLI {
      */
     public CLI execute() throws Exception {
         // Shortcut when there is nothing to do
-        if (arguments.isEmpty()) return this;
-        if (showHelp) showHelpMessageAndExit();
+        if (arguments.isEmpty() || showHelp) showHelpMessageAndExit();
 
         validate();
 
