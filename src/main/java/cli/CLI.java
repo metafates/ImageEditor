@@ -1,6 +1,7 @@
 package main.java.cli;
 
 import main.java.argparser.Argument;
+import main.java.argparser.Option;
 import main.java.argparser.Parser;
 import main.java.editor.ImageEditor;
 import main.java.transformations.Transformation;
@@ -22,14 +23,53 @@ public class CLI {
     private final List<Transformation> transformations = new ArrayList<>();
     private final List<Argument> arguments = new ArrayList<>();
 
-    private String inputFile;
-    private String outputFile;
+    private String inputFile = "";
+    private String outputFile = "";
 
     private boolean showHelp = false;
 
     private static void showHelpMessageAndExit() {
-        System.out.println("ImageEditor v0.1 help page");
+        String usage = generateUsageHelpMessage();
+        String options = generateOptionsHelpMessage();
+        String helpMessage = String.format("""
+            Climage - CLI Image Editor
+                        
+            %s
+                        
+            %s
+            """, usage, options);
+
+        System.out.println(helpMessage);
+
         System.exit(0);
+    }
+
+    private static String generateUsageHelpMessage() {
+
+        String valuedOption = "--option=value";
+        String standaloneOption = "--option";
+
+        return "usage:\n" +
+            String.format("  Option with value    %s\n", valuedOption) +
+            String.format("  Option without value %s\n", standaloneOption);
+    }
+
+    private static String generateOptionsHelpMessage() {
+        StringBuilder helpMessage = new StringBuilder();
+        helpMessage.append("options:\n");
+
+        for (Option option : Option.values()) {
+            String entry = String.format(
+                "%s %s [%s]",
+                option.getArgumentString(),
+                option.getDescription(),
+                option.getTypeName()
+            );
+
+            helpMessage.append(String.format("  %s\n", entry));
+        }
+
+        return helpMessage.toString();
     }
 
     /**

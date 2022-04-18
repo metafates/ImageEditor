@@ -12,20 +12,59 @@ import java.lang.module.FindException;
  * @see Parser
  */
 public enum Option {
-    BRIGHTNESS("--brightness", true),
-    HUE("--hue", true),
-    CROP("--crop", true),
-    HELP("--help", false),
-    ROTATE("--rotate", true),
-    OUTPUT("--out", true),
-    INPUT("--in", true);
+    BRIGHTNESS(
+        "--brightness",
+        "Adjust image brightness",
+        ValueType.INTEGER
+    ),
+    HUE(
+        "--hue",
+        "Hue rotate colors",
+        ValueType.INTEGER
+    ),
+    CROP(
+        "--crop",
+        "Crop image to the given size",
+        ValueType.STRING
+    ),
+    HELP(
+        "--help",
+        "Show help message and exit"
+    ),
+    ROTATE(
+        "--rotate",
+        "Rotate image",
+        ValueType.INTEGER
+    ),
+    OUTPUT(
+        "--out",
+        "Path to save resulted image",
+        ValueType.STRING
+    ),
+    INPUT(
+        "--in",
+        "Input image path",
+        ValueType.STRING
+    );
 
     private final String argumentString;
     private final boolean requiresValue;
+    private final String description;
+    private final ValueType valueType;
 
-    Option(final String text, final boolean requiresValue) {
+
+    Option(final String text, final String description) {
         this.argumentString = text;
-        this.requiresValue = requiresValue;
+        this.requiresValue = false;
+        this.description = description;
+        this.valueType = ValueType.NONE;
+    }
+
+    Option(final String text, final String description, final ValueType valueType) {
+        this.argumentString = text;
+        this.requiresValue = true;
+        this.description = description;
+        this.valueType = valueType;
     }
 
     /**
@@ -47,5 +86,21 @@ public enum Option {
 
     public boolean requiresValue() {
         return requiresValue;
+    }
+
+    public String getArgumentString() {
+        return argumentString;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getTypeName() {
+        return valueType.getTypeName();
+    }
+
+    public boolean validateValue(final String value) {
+        return valueType.validate(value);
     }
 }

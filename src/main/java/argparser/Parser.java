@@ -125,6 +125,10 @@ public class Parser {
 
         String value = parseValue();
 
+        if (!option.validateValue(value)) {
+            throw new ParseException("Invalid option value", cursor);
+        }
+
         return new Argument(option, value);
     }
 
@@ -168,7 +172,7 @@ public class Parser {
         boolean hasPar = false;
         boolean parClosed = false;
 
-        if (character == '"' || character == '\'') {
+        if (isParen(character)) {
             openingPar = character;
             hasPar = true;
             advance();
@@ -193,6 +197,10 @@ public class Parser {
                 break;
             }
 
+            if (isParen(character) && !hasPar) {
+                throw new ParseException("Unexpected parenthesis", cursor);
+            }
+
             valueStringBuilder.append(character);
             advance();
         }
@@ -202,5 +210,9 @@ public class Parser {
         }
 
         return valueStringBuilder.toString();
+    }
+
+    private boolean isParen(char ch) {
+        return ch == '\'' || ch == '"';
     }
 }

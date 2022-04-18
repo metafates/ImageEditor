@@ -73,6 +73,7 @@ class ParserTest {
             "--",
             "--hue=90 j",
             "--crop = name",
+            "--in=na\"me",
             "hue=90",
             "--hue=",
             "--help=",
