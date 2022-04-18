@@ -13,36 +13,36 @@ import java.lang.module.FindException;
  */
 public enum Option {
     BRIGHTNESS(
-        "--brightness",
+        "brightness",
         "Adjust image brightness",
         ValueType.INTEGER
     ),
     HUE(
-        "--hue",
+        "hue",
         "Hue rotate colors",
         ValueType.INTEGER
     ),
     CROP(
-        "--crop",
+        "crop",
         "Crop image to the given size",
         ValueType.STRING
     ),
     HELP(
-        "--help",
+        "help",
         "Show help message and exit"
     ),
     ROTATE(
-        "--rotate",
+        "rotate",
         "Rotate image",
         ValueType.INTEGER
     ),
     OUTPUT(
-        "--out",
+        "out",
         "Path to save resulted image",
         ValueType.STRING
     ),
     INPUT(
-        "--in",
+        "in",
         "Input image path",
         ValueType.STRING
     );
@@ -53,15 +53,15 @@ public enum Option {
     private final ValueType valueType;
 
 
-    Option(final String text, final String description) {
-        this.argumentString = text;
+    Option(final String name, final String description) {
+        this.argumentString = name;
         this.requiresValue = false;
         this.description = description;
         this.valueType = ValueType.NONE;
     }
 
-    Option(final String text, final String description, final ValueType valueType) {
-        this.argumentString = text;
+    Option(final String name, final String description, final ValueType valueType) {
+        this.argumentString = name;
         this.requiresValue = true;
         this.description = description;
         this.valueType = valueType;
@@ -76,7 +76,7 @@ public enum Option {
      */
     public static Option fromString(final String text) throws IllegalArgumentException {
         for (Option option : Option.values()) {
-            if (option.argumentString.equals(text)) {
+            if (option.getArgumentString().equals(text)) {
                 return option;
             }
         }
@@ -89,7 +89,7 @@ public enum Option {
     }
 
     public String getArgumentString() {
-        return argumentString;
+        return "--" + argumentString;
     }
 
     public String getDescription() {

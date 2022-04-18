@@ -11,7 +11,7 @@ public enum ValueType {
     ),
     STRING(
         "String",
-        "^[\\w\\d\\\\.\\/\\\\:\\s\"']+$"
+        "^.+$"
     ),
     NONE(
         "None",
