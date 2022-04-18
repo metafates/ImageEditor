@@ -18,6 +18,9 @@ public class TransformationFactory {
             case CROP -> new Crop(new Size(argument.value()));
             case BRIGHTNESS -> new Brightness(argument.intValue());
             case HUE -> new HueRotate(argument.intValue());
+            case SCALE -> new Scale(argument.floatValue());
+            case SATURATION -> new Saturation(argument.floatValue());
+            case BLUR -> new Blur(argument.intValue());
             default -> throw new IllegalArgumentException(String.format("'%s' transformation is not implemented", argument.option()));
         };
     }

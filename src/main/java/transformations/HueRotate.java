@@ -1,6 +1,7 @@
 package main.java.transformations;
 
 import java.awt.image.BufferedImage;
+import java.util.function.Consumer;
 
 /**
  * Applies hue rotation to the image
@@ -10,7 +11,7 @@ import java.awt.image.BufferedImage;
 public class HueRotate extends Transformation {
 
     public HueRotate(final int degree) {
-        super(image -> hueRotateTransformation(image, degree));
+        super((Consumer<BufferedImage>) image -> hueRotateTransformation(image, degree));
     }
 
     private static void hueRotateTransformation(final BufferedImage image, final int degree) {

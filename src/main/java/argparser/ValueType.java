@@ -3,11 +3,11 @@ package main.java.argparser;
 public enum ValueType {
     INTEGER(
         "Integer",
-        "^\\d+$"
+        "^-?\\d+$"
     ),
     FLOAT(
         "Decimal",
-        "^\\d+(\\.\\d*)?$"
+        "^-?\\d+(\\.\\d*)?$"
     ),
     STRING(
         "String",

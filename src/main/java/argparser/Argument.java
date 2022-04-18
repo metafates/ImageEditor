@@ -22,6 +22,10 @@ public record Argument(Option option, String value) {
         return Integer.parseInt(value);
     }
 
+    public float floatValue() {
+        return Float.parseFloat(value);
+    }
+
     @Override
     public String toString() {
         if (option.requiresValue())

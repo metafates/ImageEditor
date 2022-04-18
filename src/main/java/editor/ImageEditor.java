@@ -39,7 +39,7 @@ public class ImageEditor {
     }
 
     public ImageEditor applyTransformation(Transformation transformation) {
-        transformation.accept(image);
+        image = transformation.apply(image);
 
         return this;
     }

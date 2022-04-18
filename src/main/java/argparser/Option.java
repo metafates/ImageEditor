@@ -31,6 +31,21 @@ public enum Option {
         "help",
         "Show help message and exit"
     ),
+    SCALE(
+        "scale",
+        "Scale image by the multiplier",
+        ValueType.FLOAT
+    ),
+    SATURATION(
+        "saturation",
+        "Change saturation of the image",
+        ValueType.FLOAT
+    ),
+    BLUR(
+        "blur",
+        "Apply blur to them image",
+        ValueType.INTEGER
+    ),
     ROTATE(
         "rotate",
         "Rotate image",

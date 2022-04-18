@@ -1,13 +1,14 @@
 package main.java.transformations;
 
 import java.awt.image.BufferedImage;
+import java.util.function.Consumer;
 
 /**
  * Adjusts image brightness
  */
 public class Brightness extends Transformation {
     public Brightness(final int brightness) {
-        super(image -> brightnessTransformation(image, brightness));
+        super((Consumer<BufferedImage>) image -> brightnessTransformation(image, brightness));
     }
 
     /**
