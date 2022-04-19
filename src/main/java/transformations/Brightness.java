@@ -40,9 +40,4 @@ public class Brightness extends Transformation {
     private static int truncate(int value) {
         return Math.max(0, Math.min(255, value));
     }
-
-    @Override
-    public String toString() {
-        return "Brightness";
-    }
 }

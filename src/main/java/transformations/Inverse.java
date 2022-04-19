@@ -18,9 +18,4 @@ public class Inverse extends Transformation {
             return new int[]{red, green, blue};
         });
     }
-
-    @Override
-    public String toString() {
-        return "Inverse";
-    }
 }

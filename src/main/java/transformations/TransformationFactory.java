@@ -22,6 +22,9 @@ public class TransformationFactory {
             case SATURATION -> new Saturation(argument.floatValue());
             case BLUR -> new Blur(argument.intValue());
             case SEPIA -> new Sepia(argument.intValue());
+            case RED -> new Red(argument.floatValue());
+            case GREEN -> new Green(argument.floatValue());
+            case BLUE -> new Blue(argument.floatValue());
             case INVERSE -> new Inverse();
             default -> throw new IllegalArgumentException(String.format("'%s' transformation is not implemented", argument.option()));
         };

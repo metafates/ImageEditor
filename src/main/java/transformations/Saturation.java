@@ -32,9 +32,4 @@ public class Saturation extends Transformation {
             return new int[]{red, green, blue};
         });
     }
-
-    @Override
-    public String toString() {
-        return "Saturation";
-    }
 }

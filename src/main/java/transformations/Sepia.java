@@ -58,9 +58,4 @@ public class Sepia extends Transformation {
         }
         raster.setPixels(0, 0, w, h, pixels);
     }
-
-    @Override
-    public String toString() {
-        return "Sepia";
-    }
 }

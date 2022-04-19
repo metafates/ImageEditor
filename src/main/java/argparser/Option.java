@@ -24,6 +24,24 @@ public enum Option {
         "Preset name",
         ValueType.STRING
     ),
+    RED(
+        "red",
+        "Adjust red color",
+        "Multiplier",
+        ValueType.FLOAT
+    ),
+    GREEN(
+        "green",
+        "Adjust green color",
+        "Multiplier",
+        ValueType.FLOAT
+    ),
+    BLUE(
+        "blue",
+        "Adjust blue color",
+        "Multiplier",
+        ValueType.FLOAT
+    ),
     SEPIA(
         "sepia",
         "Apply sepia effect",

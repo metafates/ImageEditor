@@ -38,6 +38,6 @@ public class Transformation {
 
     @Override
     public String toString() {
-        return "Transformation";
+        return getClass().getSimpleName();
     }
 }

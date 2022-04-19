@@ -1,8 +1,6 @@
 package main.java.presets;
 
-import main.java.transformations.Brightness;
-import main.java.transformations.Saturation;
-import main.java.transformations.Transformation;
+import main.java.transformations.*;
 
 /**
  * Presets allow applying predefined set of transformations
@@ -12,6 +10,16 @@ public enum Preset {
         "monochrome",
         new Saturation(0),
         new Brightness(70)
+    ),
+    COLD(
+        "cold",
+        new Blue(1.5F),
+        new Red(0.9F)
+    ),
+    WARM(
+        "warm",
+        new Red(1.5F),
+        new Blue(0.9F)
     );
 
 

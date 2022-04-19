@@ -33,9 +33,4 @@ public class Rotate extends Transformation {
 
         return rotated;
     }
-
-    @Override
-    public String toString() {
-        return "Rotate";
-    }
 }
