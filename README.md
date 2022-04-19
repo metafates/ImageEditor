@@ -46,8 +46,11 @@ usage:
   Option without value --option
 
 options:
-  --brightness Adjust image brightness [Integer Multiplier]
+  --brightness Adjust image brightness [Float Multiplier]
   --preset Choose preset [String Preset name]
+  --red Adjust red color [Float Multiplier]
+  --green Adjust green color [Float Multiplier]
+  --blue Adjust blue color [Float Multiplier]
   --sepia Apply sepia effect [Integer Intensity, from 0-255, 30 produces nice results]
   --hue Hue rotate colors [Integer Degree]
   --inverse Inverse image colors [None ]
@@ -62,6 +65,8 @@ options:
 
 presets:
   monochrome [Saturation + Brightness]
+  cold [Blue + Red]
+  warm [Red + Blue]
 ```
 
 ## Build
