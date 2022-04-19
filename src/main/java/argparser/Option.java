@@ -16,7 +16,7 @@ public enum Option {
         "brightness",         // Name
         "Adjust image brightness",  // Description
         "Multiplier",               // Value description
-        ValueType.INTEGER           // Value type
+        ValueType.FLOAT             // Value type
     ),
     PRESET(
         "preset",

@@ -9,19 +9,17 @@ import java.util.function.Consumer;
  * Adjusts image brightness
  */
 public class Brightness extends Transformation {
-    public Brightness(final int brightness) {
+    public Brightness(final float brightness) {
         super((Consumer<BufferedImage>) image -> brightnessTransformation(image, brightness));
     }
 
     /**
      * Adjusts brightness of each pixel of the image
      *
-     * @param image      Image to work with
-     * @param brightness New brightness (%)
+     * @param image    Image to work with
+     * @param modifier brightness modifier
      */
-    private static void brightnessTransformation(final BufferedImage image, final int brightness) {
-        double modifier = brightness / 100.0;
-
+    private static void brightnessTransformation(final BufferedImage image, final float modifier) {
         ImageModificator.forEachPixel(image, rgb -> {
             int red = truncate((int) (rgb[0] * modifier));
             int green = truncate((int) (rgb[1] * modifier));
