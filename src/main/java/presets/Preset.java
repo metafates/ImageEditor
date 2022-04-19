@@ -20,6 +20,21 @@ public enum Preset {
         "warm",
         new Red(1.5F),
         new Blue(0.9F)
+    ),
+    RED(
+        "red",
+        new Green(0),
+        new Blue(0)
+    ),
+    GREEN(
+        "green",
+        new Red(0),
+        new Blue(0)
+    ),
+    BLUE(
+        "blue",
+        new Red(0),
+        new Green(0)
     );
 
 
