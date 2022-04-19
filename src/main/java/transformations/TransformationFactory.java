@@ -16,7 +16,7 @@ public class TransformationFactory {
         return switch (argument.option()) {
             case ROTATE -> new Rotate(argument.intValue());
             case CROP -> new Crop(new Size(argument.value()));
-            case BRIGHTNESS -> new Brightness(argument.intValue());
+            case BRIGHTNESS -> new Brightness(argument.floatValue());
             case HUE -> new HueRotate(argument.intValue());
             case SCALE -> new Scale(argument.floatValue());
             case SATURATION -> new Saturation(argument.floatValue());
