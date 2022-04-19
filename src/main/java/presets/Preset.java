@@ -9,7 +9,7 @@ public enum Preset {
     MONOCHROME(
         "monochrome",
         new Saturation(0),
-        new Brightness(70)
+        new Brightness(0.7F)
     ),
     COLD(
         "cold",
