@@ -26,6 +26,7 @@ public class TransformationFactory {
             case GREEN -> new Green(argument.floatValue());
             case BLUE -> new Blue(argument.floatValue());
             case INVERSE -> new Inverse();
+            case CONTRAST -> new Contrast();
             default -> throw new IllegalArgumentException(String.format("'%s' transformation is not implemented", argument.option()));
         };
     }

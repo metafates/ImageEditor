@@ -8,14 +8,18 @@ public class Main {
 
         try {
             // Prepare cli with arguments from java standard args variable
-            for (String arg : args) {
-                cli.prepare(arg);
-            }
+            cli.prepare(joinArgs(args));
 
             // Execute with prepared arguments
             cli.execute();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    private static String joinArgs(String[] args) {
+        StringBuilder builder = new StringBuilder();
+        for (String arg : args) builder.append(arg).append(" ");
+        return builder.toString();
     }
 }

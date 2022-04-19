@@ -37,7 +37,7 @@ public class Parser {
     }
 
     private void setText(String text) {
-        this.text = text;
+        this.text = text.trim();
     }
 
     private void resetText() {

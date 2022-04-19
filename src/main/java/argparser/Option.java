@@ -58,6 +58,10 @@ public enum Option {
         "inverse",
         "Inverse image colors"
     ),
+    CONTRAST(
+        "contrast",
+        "Apply contrast effect"
+    ),
     CROP(
         "crop",
         "Crop image to the given size",

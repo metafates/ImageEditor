@@ -34,8 +34,10 @@ Pattern used: __Factory__ (see [TransformationFactory.java](src/main/java/transf
 
 ## Usage
 
+> Use escape symbol when wrapping value into parenthesis (\"string\" instead of "string")
+
 ```bash
-java -jar ImageEditor.jar --in="image.jpg" --out="edited.jpeg" --scale=2 --blur=30 --hue=90
+java -jar ImageEditor.jar --in=image.jpg --out=\"edited file.jpeg\" --scale=2 --blur=30 --hue=90
 ```
 
 ```bash
@@ -54,6 +56,7 @@ options:
   --sepia Apply sepia effect [Integer Intensity, from 0-255, 30 produces nice results]
   --hue Hue rotate colors [Integer Degree]
   --inverse Inverse image colors [None ]
+  --contrast Apply contrast effect [None ]
   --crop Crop image to the given size [String X:Y W:H]
   --help Show help message and exit [None ]
   --scale Scale image by the multiplier [Float Multiplier]
