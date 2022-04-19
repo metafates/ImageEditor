@@ -60,10 +60,11 @@ public class CLI {
 
         for (Option option : Option.values()) {
             String entry = String.format(
-                "%s %s [%s]",
+                "%s %s [%s %s]",
                 option.getArgumentString(),
                 option.getDescription(),
-                option.getTypeName()
+                option.getTypeName(),
+                option.getValueDescription()
             );
 
             helpMessage.append(String.format("  %s\n", entry));
