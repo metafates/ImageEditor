@@ -48,7 +48,9 @@ usage:
 options:
   --brightness Adjust image brightness [Integer Multiplier]
   --preset Choose preset [String Preset name]
+  --sepia Apply sepia effect [Integer Intensity, from 0-255, 30 produces nice results]
   --hue Hue rotate colors [Integer Degree]
+  --inverse Inverse image colors [None ]
   --crop Crop image to the given size [String X:Y W:H]
   --help Show help message and exit [None ]
   --scale Scale image by the multiplier [Float Multiplier]
