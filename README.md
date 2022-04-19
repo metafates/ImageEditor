@@ -14,7 +14,10 @@ brightness and apply more such transformations over an image.
 
 ## Note
 
-❗ No external modules are used except for [Junit](https://junit.org/junit5/) testing framework
+❗ No external modules are used except for [Junit](https://junit.org/junit5/) testing framework. It's not used when
+building an app (see [build script](build-jar-unix.sh))
+
+Pattern used: __Factory__ (see [TransformationFactory.java](src/main/java/transformations/TransformationFactory.java))
 
 ## Functionality
 
@@ -25,6 +28,8 @@ brightness and apply more such transformations over an image.
 - [x] Rotate
 - [x] HUE Rotate
 - [x] Gaussian blur
+- [x] Scale
+- [ ] Crop
 
 ## Usage
 
