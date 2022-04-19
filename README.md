@@ -34,7 +34,7 @@ Pattern used: __Factory__ (see [TransformationFactory.java](src/main/java/transf
 
 ## Usage
 
-> Use escape symbol when wrapping value into parenthesis (\"string\" instead of "string")
+> Use escape symbol when wrapping value into parenthesis (\\"string\\" instead of "string")
 
 ```bash
 java -jar ImageEditor.jar --in=image.jpg --out=\"edited file.jpeg\" --scale=2 --blur=30 --hue=90
