@@ -35,4 +35,9 @@ public class Transformation {
         nonPureTransformation.accept(bufferedImage);
         return bufferedImage;
     }
+
+    @Override
+    public String toString() {
+        return "Transformation";
+    }
 }

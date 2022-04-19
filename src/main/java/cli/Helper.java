@@ -1,6 +1,7 @@
 package main.java.cli;
 
 import main.java.argparser.Option;
+import main.java.presets.Preset;
 
 /**
  * Helper class that generates help messages
@@ -9,7 +10,8 @@ public class Helper {
     private static final String title = "Climage - CLI Image Editor";
     private static final String[] sections = {
         usage(),
-        options()
+        options(),
+        presets()
     };
 
     private static String usage() {
@@ -22,20 +24,23 @@ public class Helper {
             String.format("  Option without value %s\n", standaloneOption);
     }
 
+    private static String presets() {
+        StringBuilder helpMessage = new StringBuilder();
+        helpMessage.append("presets:\n");
+
+        for (Preset preset : Preset.values()) {
+            helpMessage.append(String.format("  %s\n", preset));
+        }
+
+        return helpMessage.toString();
+    }
+
     private static String options() {
         StringBuilder helpMessage = new StringBuilder();
         helpMessage.append("options:\n");
 
         for (Option option : Option.values()) {
-            String entry = String.format(
-                "%s %s [%s %s]",
-                option.getArgumentString(),
-                option.getDescription(),
-                option.getTypeName(),
-                option.getValueDescription()
-            );
-
-            helpMessage.append(String.format("  %s\n", entry));
+            helpMessage.append(String.format("  %s\n", option));
         }
 
         return helpMessage.toString();

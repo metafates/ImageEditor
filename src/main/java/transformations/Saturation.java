@@ -41,4 +41,9 @@ public class Saturation extends Transformation {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return "Saturation";
+    }
 }

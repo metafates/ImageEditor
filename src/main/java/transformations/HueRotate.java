@@ -66,4 +66,9 @@ public class HueRotate extends Transformation {
 
         return (int) (value + 0.5);
     }
+
+    @Override
+    public String toString() {
+        return "Hue Rotate";
+    }
 }

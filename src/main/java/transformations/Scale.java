@@ -22,4 +22,9 @@ public class Scale extends Transformation {
 
         return outputImage;
     }
+
+    @Override
+    public String toString() {
+        return "Scale";
+    }
 }
