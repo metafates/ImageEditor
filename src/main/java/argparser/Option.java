@@ -24,11 +24,21 @@ public enum Option {
         "Preset name",
         ValueType.STRING
     ),
+    SEPIA(
+        "sepia",
+        "Apply sepia effect",
+        "Intensity, from 0-255, 30 produces nice results",
+        ValueType.INTEGER
+    ),
     HUE(
         "hue",
         "Hue rotate colors",
         "Degree",
         ValueType.INTEGER
+    ),
+    INVERSE(
+        "inverse",
+        "Inverse image colors"
     ),
     CROP(
         "crop",
