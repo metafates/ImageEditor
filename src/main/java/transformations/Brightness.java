@@ -1,5 +1,7 @@
 package main.java.transformations;
 
+import main.java.utils.ImageModificator;
+
 import java.awt.image.BufferedImage;
 import java.util.function.Consumer;
 
@@ -18,29 +20,15 @@ public class Brightness extends Transformation {
      * @param brightness New brightness (%)
      */
     private static void brightnessTransformation(final BufferedImage image, final int brightness) {
-        // Color spectrum
-        int[] RGB;
-
-        int imageWidth = image.getWidth();
-        int imageHeight = image.getHeight();
-
         double modifier = brightness / 100.0;
 
-        // For each pixel
-        for (int x = 0; x < imageWidth; x++) {
-            for (int y = 0; y < imageHeight; y++) {
-                RGB = image.getRaster().getPixel(x, y, new int[3]);
+        ImageModificator.forEachPixel(image, rgb -> {
+            int red = truncate((int) (rgb[0] * modifier));
+            int green = truncate((int) (rgb[1] * modifier));
+            int blue = truncate((int) (rgb[1] * modifier));
 
-                int red = truncate((int) (RGB[0] * modifier));
-                int green = truncate((int) (RGB[1] * modifier));
-                int blue = truncate((int) (RGB[1] * modifier));
-
-
-                int[] adjustedRGB = {red, green, blue};
-
-                image.getRaster().setPixel(x, y, adjustedRGB);
-            }
-        }
+            return new int[]{red, green, blue};
+        });
     }
 
     /**

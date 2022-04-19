@@ -1,5 +1,7 @@
 package main.java.transformations;
 
+import main.java.utils.ImageModificator;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.function.Consumer;
@@ -13,33 +15,22 @@ public class Saturation extends Transformation {
     }
 
     private static void saturationTransformation(final BufferedImage image, final float multiplier) {
-        int width = image.getWidth();
-        int height = image.getHeight();
+        ImageModificator.forEachPixel(image, rgb -> {
+            float[] hsb = Color.RGBtoHSB(rgb[0], rgb[1], rgb[2], null);
+            float hue = hsb[0];
+            float saturation = hsb[1];
+            float brightness = hsb[2];
 
-        int[] RGB;
+            saturation *= multiplier;
 
-        for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
-                RGB = image.getRaster().getPixel(x, y, new int[3]);
+            int rgb_ = Color.HSBtoRGB(hue, saturation, brightness);
 
-                float[] hsb = Color.RGBtoHSB(RGB[0], RGB[1], RGB[2], null);
-                float hue = hsb[0];
-                float saturation = hsb[1];
-                float brightness = hsb[2];
+            int red = (rgb_ >> 16) & 0xFF;
+            int green = (rgb_ >> 8) & 0xFF;
+            int blue = rgb_ & 0xFF;
 
-                saturation *= multiplier;
-
-                int rgb = Color.HSBtoRGB(hue, saturation, brightness);
-
-                int red = (rgb >> 16) & 0xFF;
-                int green = (rgb >> 8) & 0xFF;
-                int blue = rgb & 0xFF;
-
-                int[] adjustedRGB = {red, green, blue};
-
-                image.getRaster().setPixel(x, y, adjustedRGB);
-            }
-        }
+            return new int[]{red, green, blue};
+        });
     }
 
     @Override
