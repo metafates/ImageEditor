@@ -16,4 +16,9 @@ public class Crop extends Transformation {
     private static void cropTransformation(final BufferedImage image, final Size size) {
         // TODO: implement crop transformation
     }
+
+    @Override
+    public String toString() {
+        return "Crop";
+    }
 }

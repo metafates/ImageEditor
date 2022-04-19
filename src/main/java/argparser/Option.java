@@ -18,6 +18,12 @@ public enum Option {
         "Multiplier",               // Value description
         ValueType.INTEGER           // Value type
     ),
+    PRESET(
+        "preset",
+        "Choose preset",
+        "Preset name",
+        ValueType.STRING
+    ),
     HUE(
         "hue",
         "Hue rotate colors",
@@ -133,5 +139,16 @@ public enum Option {
 
     public boolean validateValue(final String value) {
         return valueType.validate(value);
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+            "%s %s [%s %s]",
+            getArgumentString(),
+            getDescription(),
+            getTypeName(),
+            getValueDescription()
+        );
     }
 }

@@ -3,6 +3,7 @@ package main.java.cli;
 import main.java.argparser.Argument;
 import main.java.argparser.Parser;
 import main.java.editor.ImageEditor;
+import main.java.presets.Preset;
 import main.java.transformations.Transformation;
 import main.java.transformations.TransformationFactory;
 
@@ -51,11 +52,17 @@ public class CLI {
                 case HELP -> showHelp = true;
                 case INPUT -> inputFile = argument.value();
                 case OUTPUT -> outputFile = argument.value();
+                case PRESET -> handlePreset(argument.value());
                 default -> transformations.add(TransformationFactory.create(argument));
             }
         }
 
         return this;
+    }
+
+    private void handlePreset(String presetName) {
+        Preset preset = Preset.fromName(presetName);
+        transformations.addAll(List.of(preset.getTransformations()));
     }
 
     /**

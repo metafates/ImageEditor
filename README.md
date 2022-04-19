@@ -30,6 +30,7 @@ Pattern used: __Factory__ (see [TransformationFactory.java](src/main/java/transf
 - [x] Gaussian blur
 - [x] Scale
 - [ ] Crop
+- [x] Presets
 
 ## Usage
 
@@ -46,6 +47,7 @@ usage:
 
 options:
   --brightness Adjust image brightness [Integer Multiplier]
+  --preset Choose preset [String Preset name]
   --hue Hue rotate colors [Integer Degree]
   --crop Crop image to the given size [String X:Y W:H]
   --help Show help message and exit [None ]
@@ -55,6 +57,9 @@ options:
   --rotate Rotate image [Integer Angle]
   --out Path to save resulted image [String Path]
   --in Input image path [String Path]
+
+presets:
+  monochrome [Saturation + Brightness]
 ```
 
 ## Build
