@@ -16,7 +16,7 @@ public enum Option {
         "brightness",         // Name
         "Adjust image brightness",  // Description
         "Multiplier",               // Value description
-        ValueType.INTEGER           // Value type
+        ValueType.FLOAT             // Value type
     ),
     PRESET(
         "preset",
@@ -24,11 +24,39 @@ public enum Option {
         "Preset name",
         ValueType.STRING
     ),
+    RED(
+        "red",
+        "Adjust red color",
+        "Multiplier",
+        ValueType.FLOAT
+    ),
+    GREEN(
+        "green",
+        "Adjust green color",
+        "Multiplier",
+        ValueType.FLOAT
+    ),
+    BLUE(
+        "blue",
+        "Adjust blue color",
+        "Multiplier",
+        ValueType.FLOAT
+    ),
+    SEPIA(
+        "sepia",
+        "Apply sepia effect",
+        "Intensity, from 0-255, 30 produces nice results",
+        ValueType.INTEGER
+    ),
     HUE(
         "hue",
         "Hue rotate colors",
         "Degree",
         ValueType.INTEGER
+    ),
+    INVERSE(
+        "inverse",
+        "Inverse image colors"
     ),
     CROP(
         "crop",

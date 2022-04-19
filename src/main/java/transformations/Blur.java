@@ -114,9 +114,4 @@ public class Blur extends Transformation {
 
         return (int) (value + 0.5);
     }
-
-    @Override
-    public String toString() {
-        return "Blur";
-    }
 }
