@@ -14,7 +14,10 @@ brightness and apply more such transformations over an image.
 
 ## Note
 
-❗ No external modules are used except for [Junit](https://junit.org/junit5/) testing framework
+❗ No external modules are used except for [Junit](https://junit.org/junit5/) testing framework. It's not used when
+building an app (see [build script](build-jar-unix.sh))
+
+Pattern used: __Factory__ (see [TransformationFactory.java](src/main/java/transformations/TransformationFactory.java))
 
 ## Functionality
 
@@ -25,28 +28,42 @@ brightness and apply more such transformations over an image.
 - [x] Rotate
 - [x] HUE Rotate
 - [x] Gaussian blur
+- [x] Scale
+- [ ] Crop
 
 ## Usage
 
 ```bash
-climage --in="image.jpg" --out="edited.jpeg" --scale=2 --blur=30 --hue=90
+java -jar ImageEditor.jar --in="image.jpg" --out="edited.jpeg" --scale=2 --blur=30 --hue=90
 ```
 
 ```bash
+Climage - CLI Image Editor
+
+usage:
+  Option with value    --option=value
+  Option without value --option
+
 options:
-  --brightness Adjust image brightness [Integer]
-  --hue Hue rotate colors [Integer]
-  --crop Crop image to the given size [String]
-  --help Show help message and exit [None]
-  --scale Scale image by the multiplier [Decimal]
-  --saturation Change saturation of the image [Decimal]
-  --blur Apply blur to them image [Integer]
-  --rotate Rotate image [Integer]
-  --out Path to save resulted image [String]
-  --in Input image path [String]
+  --brightness Adjust image brightness [Integer Multiplier]
+  --hue Hue rotate colors [Integer Degree]
+  --crop Crop image to the given size [String X:Y W:H]
+  --help Show help message and exit [None ]
+  --scale Scale image by the multiplier [Float Multiplier]
+  --saturation Change saturation of the image [Float Multiplier]
+  --blur Apply Gaussian blur to the image [Integer Blur radius]
+  --rotate Rotate image [Integer Angle]
+  --out Path to save resulted image [String Path]
+  --in Input image path [String Path]
 ```
 
 ## Build
+
+### Linux/MacOS/BSD
+
+Run `./build-jar-unix.sh` in the root of the project. This will put jar file to the `out/jar/ImageEditor.jar`
+
+#### Windows
 
 > 🚧 In progress...
 

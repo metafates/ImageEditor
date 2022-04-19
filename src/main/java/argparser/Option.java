@@ -13,18 +13,21 @@ import java.lang.module.FindException;
  */
 public enum Option {
     BRIGHTNESS(
-        "brightness",
-        "Adjust image brightness",
-        ValueType.INTEGER
+        "brightness",         // Name
+        "Adjust image brightness",  // Description
+        "Multiplier",               // Value description
+        ValueType.INTEGER           // Value type
     ),
     HUE(
         "hue",
         "Hue rotate colors",
+        "Degree",
         ValueType.INTEGER
     ),
     CROP(
         "crop",
         "Crop image to the given size",
+        "X:Y W:H",
         ValueType.STRING
     ),
     HELP(
@@ -34,37 +37,44 @@ public enum Option {
     SCALE(
         "scale",
         "Scale image by the multiplier",
+        "Multiplier",
         ValueType.FLOAT
     ),
     SATURATION(
         "saturation",
         "Change saturation of the image",
+        "Multiplier",
         ValueType.FLOAT
     ),
     BLUR(
         "blur",
         "Apply Gaussian blur to the image",
+        "Blur radius",
         ValueType.INTEGER
     ),
     ROTATE(
         "rotate",
         "Rotate image",
+        "Angle",
         ValueType.INTEGER
     ),
     OUTPUT(
         "out",
         "Path to save resulted image",
+        "Path",
         ValueType.STRING
     ),
     INPUT(
         "in",
         "Input image path",
+        "Path",
         ValueType.STRING
     );
 
     private final String argumentString;
     private final boolean requiresValue;
     private final String description;
+    private final String valueDescription;
     private final ValueType valueType;
 
 
@@ -73,13 +83,15 @@ public enum Option {
         this.requiresValue = false;
         this.description = description;
         this.valueType = ValueType.NONE;
+        this.valueDescription = "";
     }
 
-    Option(final String name, final String description, final ValueType valueType) {
+    Option(final String name, final String description, final String valueDescription, final ValueType valueType) {
         this.argumentString = name;
         this.requiresValue = true;
         this.description = description;
         this.valueType = valueType;
+        this.valueDescription = valueDescription;
     }
 
     /**
@@ -109,6 +121,10 @@ public enum Option {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getValueDescription() {
+        return valueDescription;
     }
 
     public String getTypeName() {
