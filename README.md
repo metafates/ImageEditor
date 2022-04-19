@@ -67,6 +67,9 @@ presets:
   monochrome [Saturation + Brightness]
   cold [Blue + Red]
   warm [Red + Blue]
+  red [Green + Blue]
+  green [Red + Blue]
+  blue [Red + Green]
 ```
 
 ## Build
