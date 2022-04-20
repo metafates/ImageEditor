@@ -1,4 +1,4 @@
-package main.java.argparser;
+package argparser;
 
 /**
  * Argument record that hold {@link Option} and its value

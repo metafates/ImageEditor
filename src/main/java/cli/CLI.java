@@ -1,11 +1,11 @@
-package main.java.cli;
+package cli;
 
-import main.java.argparser.Argument;
-import main.java.argparser.Parser;
-import main.java.editor.ImageEditor;
-import main.java.presets.Preset;
-import main.java.transformations.Transformation;
-import main.java.transformations.TransformationFactory;
+import argparser.Argument;
+import argparser.Parser;
+import editor.ImageEditor;
+import presets.Preset;
+import transformations.Transformation;
+import transformations.TransformationFactory;
 
 import java.text.ParseException;
 import java.util.ArrayList;

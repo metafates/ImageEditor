@@ -1,6 +1,6 @@
-package main.java.transformations;
+package transformations;
 
-import main.java.utils.ImageUtils;
+import utils.ImageUtils;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

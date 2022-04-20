@@ -1,4 +1,4 @@
-package main.java.argparser;
+package argparser;
 
 import java.lang.module.FindException;
 

@@ -1,7 +1,7 @@
-package main.java.transformations;
+package transformations;
 
 
-import main.java.utils.ImageUtils;
+import utils.ImageUtils;
 
 import java.awt.image.BufferedImage;
 import java.util.function.Consumer;

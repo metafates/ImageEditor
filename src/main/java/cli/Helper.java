@@ -1,7 +1,7 @@
-package main.java.cli;
+package cli;
 
-import main.java.argparser.Option;
-import main.java.presets.Preset;
+import argparser.Option;
+import presets.Preset;
 
 /**
  * Helper class that generates help messages
