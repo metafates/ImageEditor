@@ -1,6 +1,6 @@
 package main.java.transformations;
 
-import main.java.utils.ImageModificator;
+import main.java.utils.ImageUtils;
 
 import java.awt.image.BufferedImage;
 import java.util.function.Consumer;
@@ -20,7 +20,7 @@ public class Brightness extends Transformation {
      * @param modifier brightness modifier
      */
     private static void brightnessTransformation(final BufferedImage image, final float modifier) {
-        ImageModificator.forEachPixel(image, rgb -> {
+        ImageUtils.forEachPixel(image, rgb -> {
             int red = truncate((int) (rgb[0] * modifier));
             int green = truncate((int) (rgb[1] * modifier));
             int blue = truncate((int) (rgb[1] * modifier));

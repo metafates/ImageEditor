@@ -19,6 +19,9 @@ public class Parser {
     private char character = '\0';
     private String text;
 
+    /**
+     * Move cursor to the right by 1 and update character
+     */
     private void advance() {
         cursor++;
         if (cursor < text.length()) {
@@ -28,6 +31,11 @@ public class Parser {
         }
     }
 
+    /**
+     * Get next character without advancing the cursor
+     *
+     * @return Next character
+     */
     private char peek() {
         if (cursor + 1 < text.length()) {
             return text.charAt(cursor + 1);
@@ -37,7 +45,7 @@ public class Parser {
     }
 
     private void setText(String text) {
-        this.text = text;
+        this.text = text.trim();
     }
 
     private void resetText() {
@@ -66,6 +74,7 @@ public class Parser {
 
             List<Argument> arguments = new ArrayList<>();
 
+            // Until the end of string
             while (character != '\0') {
                 arguments.add(parseArgument());
             }
@@ -125,6 +134,7 @@ public class Parser {
 
         String value = parseValue();
 
+        // If parsed value type does not match expected type specified by the option
         if (!option.validateValue(value)) {
             throw new ParseException("Invalid option value", cursor);
         }
@@ -172,6 +182,7 @@ public class Parser {
         boolean hasPar = false;
         boolean parClosed = false;
 
+        // Set parser to expect matching parenthesis further (String mode)
         if (isParen(character)) {
             openingPar = character;
             hasPar = true;
@@ -191,12 +202,14 @@ public class Parser {
                 if (character == '\0') break;
             }
 
+            // Parenthesis closed
             if (character == openingPar) {
                 advance();
                 parClosed = true;
                 break;
             }
 
+            // If the first parenthesis was met in the middle of the value
             if (isParen(character) && !hasPar) {
                 throw new ParseException("Unexpected parenthesis", cursor);
             }

@@ -1,7 +1,7 @@
 package main.java.transformations;
 
 
-import main.java.utils.ImageModificator;
+import main.java.utils.ImageUtils;
 
 import java.awt.image.BufferedImage;
 import java.util.function.Consumer;
@@ -12,7 +12,7 @@ public class Green extends Transformation {
     }
 
     private static void greenTransform(final BufferedImage image, final float multiplier) {
-        ImageModificator.forEachPixel(image, rgb -> {
+        ImageUtils.forEachPixel(image, rgb -> {
             rgb[1] = (int) Math.max(0, Math.min(255, rgb[1] * multiplier));
             return rgb;
         });

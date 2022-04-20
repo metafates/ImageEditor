@@ -14,6 +14,9 @@ public class Helper {
         presets()
     };
 
+    /**
+     * @return Usage help message
+     */
     private static String usage() {
 
         String valuedOption = "--option=value";
@@ -24,6 +27,9 @@ public class Helper {
             String.format("  Option without value %s\n", standaloneOption);
     }
 
+    /**
+     * @return Presets names
+     */
     private static String presets() {
         StringBuilder helpMessage = new StringBuilder();
         helpMessage.append("presets:\n");
@@ -35,6 +41,9 @@ public class Helper {
         return helpMessage.toString();
     }
 
+    /**
+     * @return Options help message
+     */
     private static String options() {
         StringBuilder helpMessage = new StringBuilder();
         helpMessage.append("options:\n");
@@ -46,6 +55,9 @@ public class Helper {
         return helpMessage.toString();
     }
 
+    /**
+     * @return Generated help message
+     */
     public static String help() {
         StringBuilder msg = new StringBuilder();
 

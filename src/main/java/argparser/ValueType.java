@@ -1,5 +1,8 @@
 package main.java.argparser;
 
+/**
+ * Value type class that used for specified what type option expects
+ */
 public enum ValueType {
     INTEGER(
         "Integer",
