@@ -1,6 +1,6 @@
 package main.java.transformations;
 
-import main.java.utils.ImageModificator;
+import main.java.utils.ImageUtils;
 
 import java.awt.image.BufferedImage;
 import java.util.Arrays;
@@ -12,7 +12,7 @@ public class Contrast extends Transformation {
     }
 
     private static void contrastTransformation(final BufferedImage image) {
-        ImageModificator.forEachPixel(image, rgb -> {
+        ImageUtils.forEachPixel(image, rgb -> {
             int min = Arrays.stream(rgb).min().getAsInt();
             int max = Arrays.stream(rgb).max().getAsInt();
 

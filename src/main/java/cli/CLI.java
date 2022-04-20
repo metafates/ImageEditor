@@ -60,6 +60,11 @@ public class CLI {
         return this;
     }
 
+    /**
+     * Extract transformations from preset and convert them to appropriate type
+     *
+     * @param presetName Preset Name
+     */
     private void handlePreset(String presetName) {
         Preset preset = Preset.fromName(presetName);
         transformations.addAll(List.of(preset.getTransformations()));

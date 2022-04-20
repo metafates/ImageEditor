@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Image editor that can apply given transformations.
+ * Image editor that provides easy API for opening image, applying transformations and saving it.
  * Supports method chaining
  */
 public class ImageEditor {

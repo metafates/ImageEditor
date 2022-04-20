@@ -1,6 +1,6 @@
 package main.java.transformations;
 
-import main.java.utils.ImageModificator;
+import main.java.utils.ImageUtils;
 
 import java.awt.image.BufferedImage;
 
@@ -10,7 +10,7 @@ public class Inverse extends Transformation {
     }
 
     private static void inverseTransformation(final BufferedImage image) {
-        ImageModificator.forEachPixel(image, rgb -> {
+        ImageUtils.forEachPixel(image, rgb -> {
             int red = 255 - rgb[0];
             int green = 255 - rgb[1];
             int blue = 255 - rgb[2];
