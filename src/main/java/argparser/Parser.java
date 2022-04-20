@@ -79,11 +79,6 @@ public class Parser {
                 arguments.add(parseArgument());
             }
 
-            // Show help message if no arguments were given
-            if (arguments.size() == 0) {
-                arguments.add(new Argument(Option.HELP, null));
-            }
-
             return arguments;
         } catch (ParseException e) {
             throw e;
