@@ -1,6 +1,4 @@
-package main.java;
-
-import main.java.cli.CLI;
+import cli.CLI;
 
 public class Main {
     public static void main(String[] args) {

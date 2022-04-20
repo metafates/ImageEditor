@@ -1,4 +1,4 @@
-package main.java.wrappers;
+package wrappers;
 
 /**
  * Size wrapper class

@@ -1,8 +1,5 @@
-package test.java.argparser;
+package argparser;
 
-import main.java.argparser.Argument;
-import main.java.argparser.Option;
-import main.java.argparser.Parser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

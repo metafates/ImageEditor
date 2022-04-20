@@ -1,6 +1,6 @@
-package main.java.editor;
+package editor;
 
-import main.java.transformations.Transformation;
+import transformations.Transformation;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

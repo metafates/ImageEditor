@@ -1,4 +1,4 @@
-package main.java.transformations;
+package transformations;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

@@ -1,7 +1,7 @@
-package main.java.transformations;
+package transformations;
 
-import main.java.argparser.Argument;
-import main.java.wrappers.Size;
+import argparser.Argument;
+import wrappers.Size;
 
 /**
  * Transformation factory that creates transformations described by the arguments

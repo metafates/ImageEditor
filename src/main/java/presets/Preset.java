@@ -1,6 +1,6 @@
-package main.java.presets;
+package presets;
 
-import main.java.transformations.*;
+import transformations.*;
 
 /**
  * Presets allow applying predefined set of transformations

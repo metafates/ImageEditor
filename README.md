@@ -14,8 +14,8 @@ brightness and apply more such transformations over an image.
 
 ## Note
 
-❗ No external libraries & frameworks are used except for [Junit](https://junit.org/junit5/) testing framework. It's not used when
-building an app (see [build script](build-jar-unix.sh))
+❗ No external libraries & frameworks are used except for [Junit](https://junit.org/junit5/) testing framework. It's not
+used when building an app (see [build script](build-jar-unix.sh))
 
 Pattern used: __Factory__ (see [TransformationFactory.java](src/main/java/transformations/TransformationFactory.java))
 

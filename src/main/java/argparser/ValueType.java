@@ -1,4 +1,4 @@
-package main.java.argparser;
+package argparser;
 
 /**
  * Value type class that used for specified what type option expects

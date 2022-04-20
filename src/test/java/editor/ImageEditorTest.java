@@ -1,17 +1,17 @@
-package test.java.editor;
+package editor;
 
-import main.java.editor.ImageEditor;
-import main.java.transformations.Brightness;
-import main.java.transformations.HueRotate;
-import main.java.transformations.Transformation;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
+import transformations.Brightness;
+import transformations.HueRotate;
+import transformations.Transformation;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ImageEditorTest {
     private final ImageEditor editor = new ImageEditor();
@@ -32,7 +32,7 @@ public class ImageEditorTest {
     public void applyTransformationsTest() throws IOException {
         Assertions.assertDoesNotThrow(() -> editor.openImage(inputPath));
 
-        ArrayList<Transformation> transformations = new ArrayList<>();
+        List<Transformation> transformations = new ArrayList<>();
 
         transformations.add(new Brightness(150));
         transformations.add(new HueRotate(180));
