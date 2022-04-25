@@ -17,7 +17,11 @@ brightness and apply more such transformations over an image.
 ❗ No external libraries & frameworks are used except for [Junit](https://junit.org/junit5/) testing framework. It's not
 used when building an app (see [build script](build-jar-unix.sh))
 
-Pattern used: __Factory__ (see [TransformationFactory.java](src/main/java/transformations/TransformationFactory.java))
+Patterns used:
+
+- __Factory__ (see [TransformationFactory.java](src/main/java/transformations/TransformationFactory.java))
+- __Facade__ (see [ImageEditor.java](src/main/java/editor/ImageEditor.java))
+- __Strategy__ (see [Transformation.java](src/main/java/transformations/Transformation.java))
 
 ## Functionality
 
@@ -29,7 +33,6 @@ Pattern used: __Factory__ (see [TransformationFactory.java](src/main/java/transf
 - [x] HUE Rotate
 - [x] Gaussian blur
 - [x] Scale
-- [ ] Crop
 - [x] Presets
 
 ## Usage
