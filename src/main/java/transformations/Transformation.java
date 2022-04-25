@@ -5,35 +5,31 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 /**
- * Base transformation class that applies given function to the image.
+ * Base transformation class that applies given strategy to the image.
  * There are 2 types of transformations: pure and non-pure.
  * Pure transformation do not modify original image but rather return a copy with applied transformation.
- * Non-pure transformations does the opposite
+ * Non-pure transformations does the opposite.
  *
  * @see <a href="https://en.wikipedia.org/wiki/Pure_function">Pure functions</a>
  */
-public class Transformation {
-    private final boolean pure;
-    private Function<BufferedImage, BufferedImage> pureTransformation;
-    private Consumer<BufferedImage> nonPureTransformation;
+public class Transformation implements Function<BufferedImage, BufferedImage> {
+    private final Function<BufferedImage, BufferedImage> strategy;
 
     public Transformation(final Function<BufferedImage, BufferedImage> transformation) {
-        this.pureTransformation = transformation;
-        this.pure = true;
+        this.strategy = transformation;
     }
 
     public Transformation(final Consumer<BufferedImage> transformation) {
-        this.nonPureTransformation = transformation;
-        this.pure = false;
+        // Wrap it into function interface
+        this.strategy = (image) -> {
+            transformation.accept(image);
+            return image;
+        };
     }
 
+    @Override
     public BufferedImage apply(BufferedImage bufferedImage) {
-        if (pure) {
-            return pureTransformation.apply(bufferedImage);
-        }
-
-        nonPureTransformation.accept(bufferedImage);
-        return bufferedImage;
+        return strategy.apply(bufferedImage);
     }
 
     @Override
