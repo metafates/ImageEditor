@@ -18,14 +18,6 @@ public record Argument(Option option, String value) {
         return value;
     }
 
-    public int intValue() {
-        return Integer.parseInt(value);
-    }
-
-    public float floatValue() {
-        return Float.parseFloat(value);
-    }
-
     @Override
     public String toString() {
         if (option.requiresValue())
