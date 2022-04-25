@@ -62,12 +62,6 @@ public enum Option {
         "contrast",
         "Apply contrast effect"
     ),
-    CROP(
-        "crop",
-        "Crop image to the given size",
-        "X:Y W:H",
-        ValueType.STRING
-    ),
     HELP(
         "help",
         "Show help message and exit"
@@ -175,8 +169,17 @@ public enum Option {
 
     @Override
     public String toString() {
+        if (valueType == ValueType.NONE) {
+            return String.format(
+                "%s %s [%s]",
+                getArgumentString(),
+                getDescription(),
+                getTypeName()
+            );
+        }
+
         return String.format(
-            "%s %s [%s %s]",
+            "%s %s [%s: %s]",
             getArgumentString(),
             getDescription(),
             getTypeName(),

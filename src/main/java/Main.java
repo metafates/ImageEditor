@@ -6,18 +6,12 @@ public class Main {
 
         try {
             // Prepare cli with arguments from java standard args variable
-            cli.prepare(joinArgs(args));
+            cli.prepare(String.join(" ", args));
 
             // Execute with prepared arguments
             cli.execute();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    private static String joinArgs(String[] args) {
-        StringBuilder builder = new StringBuilder();
-        for (String arg : args) builder.append(arg).append(" ");
-        return builder.toString();
     }
 }

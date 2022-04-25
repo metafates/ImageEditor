@@ -9,28 +9,11 @@ package argparser;
  * @see Parser
  */
 public record Argument(Option option, String value) {
-
-    public Option getOption() {
-        return option;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public int intValue() {
-        return Integer.parseInt(value);
-    }
-
-    public float floatValue() {
-        return Float.parseFloat(value);
-    }
-
     @Override
     public String toString() {
         if (option.requiresValue())
-            return String.format("%s = %s", getOption(), getValue());
+            return String.format("%s = %s", option, value);
 
-        return getOption().toString();
+        return option.toString();
     }
 }
