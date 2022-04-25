@@ -179,7 +179,7 @@ public enum Option {
         }
 
         return String.format(
-            "%s %s [%s %s]",
+            "%s %s [%s: %s]",
             getArgumentString(),
             getDescription(),
             getTypeName(),
