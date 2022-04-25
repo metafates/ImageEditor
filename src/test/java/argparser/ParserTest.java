@@ -15,17 +15,16 @@ class ParserTest {
     @DisplayName("Parse valid arguments")
     void parseValidArguments() throws ParseException {
 
-        String input = " --in=\"file with whitespace.ext\" --help   --crop=90  --hue=190";
+        String input = " --in=\"file with whitespace.ext\" --help   --blur=90  --hue=190";
 
         Assertions.assertDoesNotThrow(() -> parser.parse(input));
 
         List<Argument> arguments = parser.parse(input);
 
         Assertions.assertAll(
-            () -> Assertions.assertEquals("file with whitespace.ext", arguments.get(0).getValue()),
-            () -> Assertions.assertFalse(arguments.get(1).getOption().requiresValue()),
-            () -> Assertions.assertEquals(Option.CROP, arguments.get(2).getOption()),
-            () -> Assertions.assertEquals("190", arguments.get(3).getValue())
+            () -> Assertions.assertEquals("file with whitespace.ext", arguments.get(0).value()),
+            () -> Assertions.assertFalse(arguments.get(1).option().requiresValue()),
+            () -> Assertions.assertEquals("190", arguments.get(3).value())
         );
     }
 
@@ -35,7 +34,7 @@ class ParserTest {
         String[] inputsWithUnknownArguments = {
             "--unknown=value",
             "--help --arg --crop90",
-            "--crоp=90" // 'о' symbol in 'crop' is a non-ascii symbol
+            "--crop=90" // 'о' symbol in 'crop' is a non-ascii symbol
         };
 
         for (String input : inputsWithUnknownArguments) {
