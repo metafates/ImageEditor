@@ -62,12 +62,6 @@ public enum Option {
         "contrast",
         "Apply contrast effect"
     ),
-    CROP(
-        "crop",
-        "Crop image to the given size",
-        "X:Y W:H",
-        ValueType.STRING
-    ),
     HELP(
         "help",
         "Show help message and exit"

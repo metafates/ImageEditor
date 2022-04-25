@@ -1,7 +1,6 @@
 package transformations;
 
 import argparser.Argument;
-import wrappers.Size;
 
 /**
  * Transformation factory that creates transformations described by the arguments
@@ -15,7 +14,6 @@ public class TransformationFactory {
 
         return switch (argument.option()) {
             case ROTATE -> new Rotate(argument.intValue());
-            case CROP -> new Crop(new Size(argument.value()));
             case BRIGHTNESS -> new Brightness(argument.floatValue());
             case HUE -> new HueRotate(argument.intValue());
             case SCALE -> new Scale(argument.floatValue());
@@ -27,7 +25,8 @@ public class TransformationFactory {
             case BLUE -> new Blue(argument.floatValue());
             case INVERSE -> new Inverse();
             case CONTRAST -> new Contrast();
-            default -> throw new IllegalArgumentException(String.format("'%s' transformation is not implemented", argument.option()));
+            default ->
+                throw new IllegalArgumentException(String.format("'%s' transformation is not implemented", argument.option()));
         };
     }
 }

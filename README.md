@@ -57,7 +57,6 @@ options:
   --hue Hue rotate colors [Integer Degree]
   --inverse Inverse image colors [None ]
   --contrast Apply contrast effect [None ]
-  --crop Crop image to the given size [String X:Y W:H]
   --help Show help message and exit [None ]
   --scale Scale image by the multiplier [Float Multiplier]
   --saturation Change saturation of the image [Float Multiplier]
