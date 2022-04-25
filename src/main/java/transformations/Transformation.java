@@ -6,11 +6,6 @@ import java.util.function.Function;
 
 /**
  * Base transformation class that applies given strategy to the image.
- * There are 2 types of transformations: pure and non-pure.
- * Pure transformation do not modify original image but rather return a copy with applied transformation.
- * Non-pure transformations does the opposite.
- *
- * @see <a href="https://en.wikipedia.org/wiki/Pure_function">Pure functions</a>
  */
 public class Transformation implements Function<BufferedImage, BufferedImage> {
     private final Function<BufferedImage, BufferedImage> strategy;
