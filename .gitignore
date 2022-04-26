@@ -12,7 +12,7 @@ out/
 .DS_Store
 
 # Lib
-lib/
+./lib
 
 # Log file
 *.log
