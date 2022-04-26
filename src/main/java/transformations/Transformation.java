@@ -1,7 +1,6 @@
 package transformations;
 
 import java.awt.image.BufferedImage;
-import java.util.function.Consumer;
 import java.util.function.Function;
 
 /**
@@ -12,14 +11,6 @@ public class Transformation implements Function<BufferedImage, BufferedImage> {
 
     public Transformation(final Function<BufferedImage, BufferedImage> strategy) {
         this.strategy = strategy;
-    }
-
-    public Transformation(final Consumer<BufferedImage> strategy) {
-        // Wrap consumer into function interface
-        this.strategy = (image) -> {
-            strategy.accept(image);
-            return image;
-        };
     }
 
     @Override
