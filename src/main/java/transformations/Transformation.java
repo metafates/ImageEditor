@@ -10,14 +10,14 @@ import java.util.function.Function;
 public class Transformation implements Function<BufferedImage, BufferedImage> {
     private final Function<BufferedImage, BufferedImage> strategy;
 
-    public Transformation(final Function<BufferedImage, BufferedImage> transformation) {
-        this.strategy = transformation;
+    public Transformation(final Function<BufferedImage, BufferedImage> strategy) {
+        this.strategy = strategy;
     }
 
-    public Transformation(final Consumer<BufferedImage> transformation) {
-        // Wrap it into function interface
+    public Transformation(final Consumer<BufferedImage> strategy) {
+        // Wrap consumer into function interface
         this.strategy = (image) -> {
-            transformation.accept(image);
+            strategy.accept(image);
             return image;
         };
     }

@@ -1,6 +1,7 @@
 package presets;
 
-import transformations.*;
+import transformations.Transformation;
+import transformations.lib.*;
 
 /**
  * Presets allow applying predefined set of transformations

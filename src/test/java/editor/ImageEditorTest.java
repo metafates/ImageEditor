@@ -4,9 +4,9 @@ import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
-import transformations.Brightness;
-import transformations.HueRotate;
 import transformations.Transformation;
+import transformations.lib.Brightness;
+import transformations.lib.HueRotate;
 
 import java.io.File;
 import java.io.IOException;
