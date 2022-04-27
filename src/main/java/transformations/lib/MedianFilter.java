@@ -7,6 +7,11 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Median filter removes noise from the image
+ *
+ * @see <a href="https://en.wikipedia.org/wiki/Median_filter">Median Filter</a>
+ */
 public class MedianFilter extends Transformation {
 
     public MedianFilter(final int radius) {

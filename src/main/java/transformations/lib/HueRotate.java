@@ -1,7 +1,7 @@
 package transformations.lib;
 
 import transformations.Transformation;
-import utils.ImageUtils;
+import util.Images;
 
 import java.awt.image.BufferedImage;
 
@@ -18,7 +18,7 @@ public class HueRotate extends Transformation {
 
     private static BufferedImage hueRotateTransformation(final BufferedImage image, final int degree) {
         double[][] rotationMatrix = generateRotationMatrix(degree);
-        ImageUtils.forEachPixel(image, rgb -> rotateRGB(rotationMatrix, rgb));
+        Images.forEachPixel(image, rgb -> rotateRGB(rotationMatrix, rgb));
 
         return image;
     }

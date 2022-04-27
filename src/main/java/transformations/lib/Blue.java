@@ -1,7 +1,7 @@
 package transformations.lib;
 
 import transformations.Transformation;
-import utils.ImageUtils;
+import util.Images;
 
 import java.awt.image.BufferedImage;
 
@@ -11,7 +11,7 @@ public class Blue extends Transformation {
     }
 
     private static BufferedImage blueTransform(final BufferedImage image, final float multiplier) {
-        ImageUtils.forEachPixel(image, rgb -> {
+        Images.forEachPixel(image, rgb -> {
             rgb[2] = (int) Math.max(0, Math.min(255, rgb[2] * multiplier));
             return rgb;
         });

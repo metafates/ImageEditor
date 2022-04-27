@@ -1,7 +1,7 @@
 package transformations.lib;
 
 import transformations.Transformation;
-import utils.ImageUtils;
+import util.Images;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -15,7 +15,7 @@ public class Saturation extends Transformation {
     }
 
     private static BufferedImage saturationTransformation(final BufferedImage image, final float multiplier) {
-        ImageUtils.forEachPixel(image, rgb -> {
+        Images.forEachPixel(image, rgb -> {
             float[] hsb = Color.RGBtoHSB(rgb[0], rgb[1], rgb[2], null);
             float hue = hsb[0];
             float saturation = hsb[1];

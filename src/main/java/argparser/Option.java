@@ -6,7 +6,6 @@ import java.lang.module.FindException;
  * Option is a part of argument that holds its name<br>
  * <p>
  * Example: --option=value
- * TODO: Add type check
  *
  * @see Argument
  * @see Parser
@@ -23,6 +22,12 @@ public enum Option {
         "Choose preset",
         "Preset name",
         ValueType.STRING
+    ),
+    NOISE(
+        "noise",
+        "Add noise",
+        "Chance. If random() <= chance then apply noise to this pixel",
+        ValueType.FLOAT
     ),
     MEDIANFILTER(
         "medianfilter",

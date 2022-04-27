@@ -22,6 +22,9 @@ public class TransformationFactory {
             case ROTATE -> new Rotate(
                 intValue.get()
             );
+            case NOISE -> new Noise(
+                floatValue.get()
+            );
             case BRIGHTNESS -> new Brightness(
                 floatValue.get()
             );

@@ -1,7 +1,7 @@
 package transformations.lib;
 
 import transformations.Transformation;
-import utils.ImageUtils;
+import util.Images;
 
 import java.awt.image.BufferedImage;
 
@@ -20,7 +20,7 @@ public class Brightness extends Transformation {
      * @param modifier brightness modifier
      */
     private static BufferedImage brightnessTransformation(final BufferedImage image, final float modifier) {
-        ImageUtils.forEachPixel(image, rgb -> {
+        Images.forEachPixel(image, rgb -> {
             int red = truncate((int) (rgb[0] * modifier));
             int green = truncate((int) (rgb[1] * modifier));
             int blue = truncate((int) (rgb[1] * modifier));

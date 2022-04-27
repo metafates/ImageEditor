@@ -1,4 +1,4 @@
-package utils;
+package util;
 
 import java.awt.image.BufferedImage;
 import java.util.function.Function;
@@ -6,7 +6,7 @@ import java.util.function.Function;
 /**
  * Image utils class
  */
-public class ImageUtils {
+public class Images {
     /**
      * Apply function for each pixel of the image
      *
