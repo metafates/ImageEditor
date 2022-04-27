@@ -24,6 +24,12 @@ public enum Option {
         "Preset name",
         ValueType.STRING
     ),
+    MEDIANFILTER(
+        "medianfilter",
+        "Apply median filter",
+        "Radius",
+        ValueType.INTEGER
+    ),
     RED(
         "red",
         "Adjust red color",

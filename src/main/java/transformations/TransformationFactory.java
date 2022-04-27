@@ -49,6 +49,9 @@ public class TransformationFactory {
             case BLUE -> new Blue(
                 floatValue.get()
             );
+            case MEDIANFILTER -> new MedianFilter(
+                intValue.get()
+            );
             case INVERSE -> new Inverse();
             case CONTRAST -> new Contrast();
             default -> throw new IllegalArgumentException(
