@@ -1,5 +1,7 @@
 # Climage - CLI Image Editor
 
+> University assignment, nothing serious 😪
+
 - [About](#about)
 - [Note](#note)
 - [Functionality](#functionality)
@@ -18,12 +20,6 @@ brightness and apply more such transformations over an image.
 used when building an app (see [build script](build-jar-unix.sh))
 
 __JDK 17__ is required
-
-Patterns used:
-
-- __Factory__ (see [TransformationFactory.java](src/main/java/transformations/TransformationFactory.java))
-- __Facade__ (see [ImageEditor.java](src/main/java/editor/ImageEditor.java))
-- __Strategy__ (see [Transformation.java](src/main/java/transformations/Transformation.java))
 
 ## Functionality
 
