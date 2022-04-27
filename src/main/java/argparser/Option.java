@@ -30,7 +30,7 @@ public enum Option {
         ValueType.FLOAT
     ),
     MEDIANFILTER(
-        "medianfilter",
+        "median-filter",
         "Apply median filter",
         "Radius",
         ValueType.INTEGER
